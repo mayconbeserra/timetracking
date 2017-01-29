@@ -11,14 +11,14 @@ namespace Visma.TimeTracking.Tests.AppService
         [Theory]
         [InlineData("Project1", "Request1", "Desc1")]
         [InlineData("Project2", "Request2", "Desc2")]
-        public void StartActivity_Then_An_Event_Should_Be_Sent(string projectId, string requestId, string description)
+        public async void StartActivity_Then_An_Event_Should_Be_Sent(string projectId, string requestId, string description)
         {
             var mockRepository = Substitute.For<IDomainRepository>();
             var activityService = new ActivityService(mockRepository);
 
-            activityService.StartActivity(projectId, DateTime.UtcNow, requestId, description);
+            await activityService.StartActivity(projectId, DateTime.UtcNow, requestId, description);
 
-            mockRepository.Received(1).Save(Arg.Any<ActivityModel>());
+            await mockRepository.Received(1).Save(Arg.Any<ActivityModel>());
         }
 
         [Theory]
