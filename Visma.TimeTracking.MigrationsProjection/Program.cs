@@ -25,10 +25,11 @@ namespace Visma.TimeTracking.MigrationsProjection
         {
             var customer = context.Customers.FirstOrDefault(x => x.Name == "Customer Default");
             var customerId = Guid.NewGuid().ToString();
+            var seedApplied = false;
 
             if (customer == null)
             {
-                Console.WriteLine("nullo");
+                seedApplied = true;
                 context.Customers.Add(new Customer
                 {
                     Id = customerId,
@@ -42,6 +43,7 @@ namespace Visma.TimeTracking.MigrationsProjection
 
             if (project == null)
             {
+                seedApplied = true;
                 context.Projects.Add(new Project
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -52,7 +54,8 @@ namespace Visma.TimeTracking.MigrationsProjection
                 });
             }
 
-            Console.WriteLine("saved");
+            if (seedApplied) Console.WriteLine("Seed Data --> Applied");
+
             context.SaveChanges();
         }
     }

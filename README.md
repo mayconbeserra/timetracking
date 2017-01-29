@@ -17,7 +17,11 @@ For now, I just created some end points for starting, pausing and adjusting time
 + Migrations
 + Postgres
 
-# Routes
+# How to run?
 
-
-`localhost/api/v1/activities`
+1. git clone git@github.com:mayconbeserra/timetracking.git
+2. cd timetracking
+3. dotnet restore
+4. docker run --name postgres-timetracking -p 5432:5432 -e POSTGRES_PASSWORD=sql -e POSTGRES_DB=timertracking -d postgres:latest
+5. dotnet run -p Visma.TimeTracking.MigrationsEventSourcing
+6. dotnet run -p Visma.TimeTracking.MigrationsProjection
