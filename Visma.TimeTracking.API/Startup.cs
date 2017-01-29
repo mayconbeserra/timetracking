@@ -12,6 +12,7 @@ using Npgsql;
 using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore;
 using SimpleInjector.Integration.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Swagger;
 using Visma.TimeTracking.AppService;
 using Visma.TimeTracking.Domain.Events.V1;
 using Visma.TimeTracking.EventSourcing.Bus;
@@ -49,6 +50,11 @@ namespace Visma.TimeTracking.API
             services
                 .AddOptions();
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
+
             services
                 .AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(Container))
                 .AddSingleton<IViewComponentActivator>(new SimpleInjectorViewComponentActivator(Container));
@@ -61,10 +67,13 @@ namespace Visma.TimeTracking.API
         {
             SetupContainer(app);
 
+            app.UseSwagger();
             app.UseMvc();
 
-//            serverLifetime
-//                .ApplicationStopped.Register(Log.CloseAndFlush);
+            app.UseSwaggerUi(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
         }
 
         private void SetupContainer(IApplicationBuilder server)

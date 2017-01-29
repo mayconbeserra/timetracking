@@ -9,6 +9,7 @@ namespace Visma.TimeTracking.Domain.Events.V1
 
         protected ActivityEvent(string creatorId = null, string correlationId = null) : base(creatorId, correlationId)
         {
+
         }
     }
 }

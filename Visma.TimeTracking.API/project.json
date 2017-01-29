@@ -26,7 +26,8 @@
         "Newtonsoft.Json": "9.0.1",
         "Serilog.Extensions.Logging": "1.2.0",
         "Serilog.Sinks.Console": "2.1.0",
-        "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3"
+        "SimpleInjector.Integration.AspNetCore.Mvc": "3.2.3",
+        "Swashbuckle.AspNetCore" : "1.0.0-rc1"
     },
 
     "tools": {
