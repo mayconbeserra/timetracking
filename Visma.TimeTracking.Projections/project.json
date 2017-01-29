@@ -1,0 +1,19 @@
+﻿{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "debugType": "portable"
+    },
+    "dependencies": {
+        "Visma.TimeTracking": { "target": "project" },
+        "Visma.TimeTracking.Domain": { "target": "project" },
+        "NETStandard.Library": "1.6.0",
+        "Microsoft.EntityFrameworkCore": "1.0.1",
+        "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.2",
+        "SimpleInjector": "3.2.3"
+    },
+    "frameworks": {
+        "netstandard1.6": {
+            "imports": "dnxcore50"
+        }
+    }
+}

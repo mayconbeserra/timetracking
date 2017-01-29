@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking", "Visma.TimeTracking/Visma.TimeTracking.xproj", "{CBDC9814-A162-4F65-AEA2-31B7182E7E54}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking.Domain", "Visma.TimeTracking.Domain\Visma.TimeTracking.Domain.xproj", "{C072FE89-18B7-4CFA-8206-1964366B609C}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking.Projections", "Visma.TimeTracking.Projections\Visma.TimeTracking.Projections.xproj", "{280A65F6-BC02-4B43-91D0-AFEE1D62F836}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking.AppService", "Visma.TimeTracking.AppService\Visma.TimeTracking.AppService.xproj", "{68C8F4EA-E320-4EB0-986C-05272FD3A29B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking.API", "Visma.TimeTracking.API\Visma.TimeTracking.API.xproj", "{40655346-CD9F-4293-A9F7-B035D83AA568}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking.Tests", "Visma.TimeTracking.Tests\Visma.TimeTracking.Tests.xproj", "{FA0F8722-E95B-469D-90A0-587AA697477A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking.MigrationsProjection", "Visma.TimeTracking.MigrationsProjection\Visma.TimeTracking.MigrationsProjection.xproj", "{2AD6A78A-9971-48C4-95A9-4384A317F643}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Visma.TimeTracking.MigrationsEventSourcing", "Visma.TimeTracking.MigrationsEventSourcing\Visma.TimeTracking.MigrationsEventSourcing.xproj", "{D70254AD-7E8E-42D8-976B-435CEF94E1E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBDC9814-A162-4F65-AEA2-31B7182E7E54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBDC9814-A162-4F65-AEA2-31B7182E7E54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBDC9814-A162-4F65-AEA2-31B7182E7E54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBDC9814-A162-4F65-AEA2-31B7182E7E54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C072FE89-18B7-4CFA-8206-1964366B609C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C072FE89-18B7-4CFA-8206-1964366B609C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C072FE89-18B7-4CFA-8206-1964366B609C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C072FE89-18B7-4CFA-8206-1964366B609C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280A65F6-BC02-4B43-91D0-AFEE1D62F836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280A65F6-BC02-4B43-91D0-AFEE1D62F836}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280A65F6-BC02-4B43-91D0-AFEE1D62F836}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280A65F6-BC02-4B43-91D0-AFEE1D62F836}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68C8F4EA-E320-4EB0-986C-05272FD3A29B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68C8F4EA-E320-4EB0-986C-05272FD3A29B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68C8F4EA-E320-4EB0-986C-05272FD3A29B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68C8F4EA-E320-4EB0-986C-05272FD3A29B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40655346-CD9F-4293-A9F7-B035D83AA568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40655346-CD9F-4293-A9F7-B035D83AA568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40655346-CD9F-4293-A9F7-B035D83AA568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40655346-CD9F-4293-A9F7-B035D83AA568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA0F8722-E95B-469D-90A0-587AA697477A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0F8722-E95B-469D-90A0-587AA697477A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0F8722-E95B-469D-90A0-587AA697477A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0F8722-E95B-469D-90A0-587AA697477A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AD6A78A-9971-48C4-95A9-4384A317F643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AD6A78A-9971-48C4-95A9-4384A317F643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AD6A78A-9971-48C4-95A9-4384A317F643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AD6A78A-9971-48C4-95A9-4384A317F643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70254AD-7E8E-42D8-976B-435CEF94E1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70254AD-7E8E-42D8-976B-435CEF94E1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70254AD-7E8E-42D8-976B-435CEF94E1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70254AD-7E8E-42D8-976B-435CEF94E1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

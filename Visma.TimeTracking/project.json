@@ -1,0 +1,21 @@
+﻿{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "debugType": "portable"
+    },
+    "dependencies": {
+        "NETStandard.Library": "1.6.0",
+        "Microsoft.CSharp": "4.0.1",
+        "Microsoft.EntityFrameworkCore": "1.0.1",
+        "Npgsql.EntityFrameworkCore.PostgreSQL": "1.0.2",
+        "Newtonsoft.Json" : "9.0.1",
+        "SimpleInjector": "3.2.3",
+        "System.Data.Common": "4.1.0",
+        "System.Reflection.TypeExtensions": "4.1.0"
+    },
+    "frameworks": {
+        "netstandard1.6": {
+            "imports": "dnxcore50"
+        }
+    }
+}

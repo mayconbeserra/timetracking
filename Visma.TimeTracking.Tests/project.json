@@ -1,0 +1,38 @@
+{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "debugType": "portable"
+    },
+    "dependencies": {
+        "Visma.TimeTracking": { "target" : "project" },
+        "Visma.TimeTracking.AppService": { "target": "project" },
+        "Visma.TimeTracking.Domain": { "target" : "project" },
+        "Visma.TimeTracking.MigrationsEventSourcing": { "target" : "project" },
+        "Visma.TimeTracking.MigrationsProjection": { "target" : "project" },
+        "Microsoft.EntityFrameworkCore": "1.1.0",
+        "Microsoft.EntityFrameworkCore.Design": "1.1.0",
+        "Microsoft.EntityFrameworkCore.Sqlite": "1.1.0",
+        "System.Runtime.Serialization.Primitives": "4.1.1",
+        "SimpleInjector" : "3.2.7",
+        "SimpleInjector.Extensions.LifetimeScoping": "3.2.7",
+        "FluentAssertions": "4.9.1",
+        "NSubstitute": "2.0.0-rc",
+        "xunit": "2.1.0",
+        "dotnet-test-xunit": "1.0.0-rc2-192208-24"
+    },
+    "testRunner": "xunit",
+    "frameworks": {
+        "netcoreapp1.0": {
+            "dependencies": {
+                "Microsoft.NETCore.App": {
+                    "type": "platform",
+                    "version": "1.0.1"
+                }
+            },
+            "imports": [
+                "dotnet5.4",
+                "portable-net451+win8"
+            ]
+        }
+    }
+}
