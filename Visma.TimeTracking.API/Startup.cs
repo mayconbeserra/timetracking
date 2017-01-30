@@ -14,6 +14,7 @@ using SimpleInjector.Integration.AspNetCore;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Swagger;
 using Visma.TimeTracking.AppService;
+using Visma.TimeTracking.API.Middlewares;
 using Visma.TimeTracking.Domain.Events.V1;
 using Visma.TimeTracking.EventSourcing.Bus;
 using Visma.TimeTracking.EventSourcing.Db;
@@ -43,10 +44,8 @@ namespace Visma.TimeTracking.API
             Container.Options.DefaultScopedLifestyle = new AspNetRequestLifestyle();
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
             services
                 .AddOptions();
 
@@ -62,11 +61,11 @@ namespace Visma.TimeTracking.API
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IApplicationLifetime serverLifetime)
         {
             SetupContainer(app);
 
+            app.UseMiddleware<ErrorHandlerMiddleware>();
             app.UseSwagger();
             app.UseMvc();
 
@@ -107,7 +106,6 @@ namespace Visma.TimeTracking.API
             Container.RegisterCollection(typeof(IEventHandler<ActivityAdjusted>), handlersAssembly);
 
             Container.RegisterSingleton(server.ApplicationServices.GetService<ILoggerFactory>());
-//            Container.RegisterSingleton(server.ApplicationServices.GetService<IOptions<ConsoleClientViewModel>>());
         }
     }
 }
