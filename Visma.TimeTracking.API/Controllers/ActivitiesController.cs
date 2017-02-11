@@ -16,12 +16,6 @@ namespace Visma.TimeTracking.API.Controllers
             ActivityService = activityService;
         }
 
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ActivityInput input)
         {
@@ -38,17 +32,26 @@ namespace Visma.TimeTracking.API.Controllers
         {
             if (!input.StartDate.HasValue || !input.EndDate.HasValue) return BadRequest();
 
-            await ActivityService.AdjustActivity(id, input.StartDate.Value, input.EndDate.Value, HttpContext.TraceIdentifier, input.Description);
+            var result = await ActivityService.AdjustActivity(
+                id,
+                input.StartDate.Value,
+                input.EndDate.Value,
+                HttpContext.TraceIdentifier,
+                input.Description);
 
-            return Ok();
+            return result > 0 ? (IActionResult) Ok() : BadRequest();
         }
 
         [HttpPatch("{id}")]
         public async Task<IActionResult> Patch(string id, [FromBody] ActivityInput input)
         {
-            await ActivityService.PauseActivity(id, DateTime.UtcNow, HttpContext.TraceIdentifier, input.Description);
+            var result = await ActivityService.PauseActivity(
+                id,
+                DateTime.UtcNow,
+                HttpContext.TraceIdentifier,
+                input.Description);
 
-            return Ok();
+            return result > 0 ? (IActionResult) Ok() : BadRequest();
         }
     }
 }

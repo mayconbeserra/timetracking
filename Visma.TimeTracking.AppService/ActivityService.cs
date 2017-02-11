@@ -19,12 +19,16 @@ namespace Visma.TimeTracking.AppService
         {
             var activity = await Repository.Load<ActivityModel>(aggregateId);
 
+            if (activity == null) return -1;
+
             return await Repository.Save(activity.Pause(endDate, description, "Creator", requestId));
         }
 
         public async Task<int> AdjustActivity(string aggregate, DateTime startDate, DateTime endDate, string requestId, string description)
         {
             var activity = await Repository.Load<ActivityModel>(aggregate);
+
+            if (activity == null) return -1;
 
             return await Repository.Save(activity.Adjust(startDate, endDate, description, "Creator", requestId));
         }

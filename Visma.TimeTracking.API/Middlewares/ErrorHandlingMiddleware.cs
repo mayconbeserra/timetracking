@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,10 @@ namespace Visma.TimeTracking.API.Middlewares
             catch (ArgumentNullException e)
             {
                 await HandleExceptionAsync(context, e, HttpStatusCode.NotFound);
+            }
+            catch (InvalidOperationException e)
+            {
+                await HandleExceptionAsync(context, e, HttpStatusCode.BadRequest);
             }
             catch (Exception e)
             {

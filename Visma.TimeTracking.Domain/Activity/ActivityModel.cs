@@ -37,12 +37,15 @@ namespace Visma.TimeTracking.Domain.Activity
             string creator,
             string correlationId)
         {
-            if (!Exists) throw new InvalidOperationException();
+            if (!Exists) throw new InvalidOperationException("Activity is not created");
+            if (State.EndDate.HasValue) throw new InvalidOperationException("This activity was already paused");
             if (endDate == DateTime.MaxValue) throw new ArgumentNullException(nameof(endDate));
             if (endDate == DateTime.MinValue) throw new ArgumentNullException(nameof(endDate));
             if (string.IsNullOrEmpty(description)) throw new ArgumentNullException(nameof(description));
 
-            Apply(new ActivityPaused(endDate,
+            Apply(new ActivityPaused(
+                State.ProjectId,
+                endDate,
                 CalculateMinutes(State.StartDate, endDate),
                 description,
                 creator,
@@ -66,7 +69,9 @@ namespace Visma.TimeTracking.Domain.Activity
             if (string.IsNullOrEmpty(description)) throw new ArgumentNullException(nameof(description));
 
             Apply(
-                new ActivityAdjusted(startDate,
+                new ActivityAdjusted(
+                    State.ProjectId,
+                    startDate,
                     endDate,
                     CalculateMinutes(startDate, endDate),
                     description,
