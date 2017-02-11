@@ -1,0 +1,29 @@
+{
+  "name": "timetracking",
+  "version": "1.0.0",
+  "description": "This API is designed to use CQRS + Event Sourcing",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "cd Visma.TimeTracking.API/ && env $(cat ../.env | xargs) dotnet watch run",
+    "test": "ls Visma.TimeTracking.Tests/project.json | xargs -n 1 dotnet test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayconbeserra/timetracking.git"
+  },
+  "keywords": [
+    "dotnet;",
+    "c#;",
+    "cqrs;",
+    "eventsourcing"
+  ],
+  "author": "Maycon Beserra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mayconbeserra/timetracking/issues"
+  },
+  "homepage": "https://github.com/mayconbeserra/timetracking#readme"
+}
