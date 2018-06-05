@@ -7,11 +7,11 @@ namespace Visma.TimeTracking.Domain.Activity
 {
     public sealed class ActivityState : DomainState
     {
-        public string ProjectId { get; set; }
-        public string Description { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime? EndDate { get; set; }
-        public double TotalInMinutes { get; set; }
+        public string ProjectId { get; private set; }
+        public string Description { get; private set; }
+        public DateTime StartDate { get; private set; }
+        public DateTime? EndDate { get; private set; }
+        public double TotalInMinutes { get; private set; }
 
         public void Handle(ActivityStarted @event)
         {
